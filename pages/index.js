@@ -1,11 +1,11 @@
 import { Header } from "@/components/header";
-import { Trending } from "@/components/trending";
+import { Posts } from "@/components/posts";
 
 export default function Home() {
   return (
     <main>
       <Header/> 
-      <Trending/>
+      <Posts/>
     </main>
   );
 }

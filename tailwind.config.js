@@ -17,6 +17,8 @@ module.exports = {
         "badge-text": "#4B6BFB",
         "desc-color": "#181A2A",
         "button-bg": "#696A75",
+        "title-color":"#181A2A",
+        "username-color":"#97989F",
       },
     },
   },

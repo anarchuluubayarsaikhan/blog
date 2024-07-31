@@ -15,13 +15,11 @@ useEffect(()=> {
     .then((data) => {setNews(data)});},
     [])
 return (
-    <div className="w-full xl:max-w-screen-xl xl:-m-auto">
-        <div className="m-auto">{news.map((item, index) => (
-               <div>
-                     <div key={item.id}>
-                        <Image src={item.social_image} width={600} height={400} alt="Image" className={`${index=== indexnumber? "block":"hidden"}`}/>
+    <div className="xl:m-auto xl:max-w-screen-xl">
+        <div className="m-auto w-full">{news.map((item, index) => (
+                     <div key={item.id} className="xl:m-auto">
+                        <Image src={item.social_image} width={6000} height={400} alt="Image" className={`${index=== indexnumber? "block":"hidden"}`}/>
                     </div>
-               </div>
             ))}
             <div className="flex gap-2">
                         <IoIosArrowDropleftCircle onClick={()=> {

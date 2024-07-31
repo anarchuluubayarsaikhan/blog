@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="xl:text-center p-8">
      <Header/>
-     <Imageslider/>
+     <Slider/>
      <Posts/>
      <Footer/>
     </main>

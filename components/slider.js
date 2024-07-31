@@ -25,15 +25,21 @@ return (
             ))}
             <div className="flex gap-2">
                         <IoIosArrowDropleftCircle onClick={()=> {
-                            setIndexnumber(indexnumber-1)
+                           
                             if(indexnumber === 0) {
-                                setIndexnumber (news.length)
+                                setIndexnumber (news.length-1)
+                            }
+                            else {
+                                setIndexnumber(indexnumber-1)
                             }
                         }} className="w-20 h-20" />
                         <IoIosArrowDroprightCircle onClick={()=> {
-                            setIndexnumber(indexnumber+1)
-                            if(indexnumber === news.length) {
+            
+                            if(indexnumber === news.length-1) {
                                 setIndexnumber (0)
+                            }
+                            else {
+                                setIndexnumber(indexnumber+1)
                             }
                         }} className="w-20 h-20"/>
             </div>

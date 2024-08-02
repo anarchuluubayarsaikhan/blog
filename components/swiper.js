@@ -3,7 +3,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-
+import { EffectFade } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -20,8 +20,9 @@ export function Swipersnew () {
 
   return (
     <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
       spaceBetween={50}
+      effect="fade"
       slidesPerView={1}
       navigation
       pagination={{ clickable: true }}

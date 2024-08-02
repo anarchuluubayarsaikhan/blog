@@ -1,58 +1,37 @@
-import { Swiper } from 'swiper/react';
-import Swiper from 'swiper';
-// import Swiper styles
-import 'swiper/css';
-import { Navigation, Pagination } from 'swiper/modules';
-// import Swiper and modules styles
-import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
-
-import Swiper from 'swiper/bundle';
-
-// import styles bundle
-import 'swiper/swiper-bundle.min.css';
+import 'swiper/css/scrollbar';
 
 
-export function Swiper () {
-    const swiper = new Swiper(".swiper", {
-        // Optional parameters
-        direction: "vertical",
-        loop: true,
-      
-        // If we need pagination
-        pagination: {
-          el: ".swiper-pagination",
-        },
-      
-        // Navigation arrows
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      
-        // And if we need scrollbar
-        scrollbar: {
-          el: ".swiper-scrollbar",
-        },
-      });
-      
-      
+// Import Swiper styles
+import 'swiper/css';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
-    return (
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                {news.map((item, index) => (
-                    <div class="swiper-slide" key={item.id}>
-                    
-                        <Image src={item.social_image} width={600} height={400} alt="Image" className="w-full aspect-video"/>
-                    </div>))}
-            </div>
+export function Swipersnew () {
+  const [news, setNews] = useState([])
+  useEffect(()=> {
+    fetch(`https://dev.to/api/articles?username=ben&per_page=9`)
+    .then((response) => {return response.json()})
+    .then((data) => {setNews(data)});},
+    [])
 
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-
-    )
-    }
+  return (
+    <Swiper
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      spaceBetween={50}
+      slidesPerView={1}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+    >
+      {news.map((item, index) => (
+      <SwiperSlide key={item.id}>
+            <Image src={item.social_image} width={6000} height={400} alt="Image" />
+      </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+};

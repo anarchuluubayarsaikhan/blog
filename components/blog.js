@@ -59,12 +59,14 @@ export function Blog() {
                     </div>
                     ))}
                 </div>
+                {!ended && (
                     <button disabled={loading}  className="btn border border-button-bg rounded-md py-3 px-5 text-button-bg text-base font-medium" onClick={loadMore}>
                         {loading && (
                             <span class="loading loading-spinner loading-xs"></span>
                         )}
                         Load more
                     </button>
+                )}
             </div>
         </div>
        

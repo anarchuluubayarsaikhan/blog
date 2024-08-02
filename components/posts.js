@@ -51,8 +51,6 @@ export function Posts() {
                     )}
                     Load more</button>
             )}
-                
-
         </div>
     )
   }

@@ -1,3 +1,4 @@
+import { Blog } from "@/components/blog";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Imageslider } from "@/components/imageslider";
@@ -9,11 +10,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className="xl:text-center p-8">
+    <main className=" p-8">
      <Header/>
      <Slider/>
-     <Posts/>
-     <Footer/>
+     <Blog/>
     </main>
   );
 }

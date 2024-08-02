@@ -15,13 +15,14 @@ useEffect(()=> {
     .then((data) => {setNews(data)});},
     [])
 return (
-    <div className="xl:m-auto xl:max-w-screen-xl">
-        <div className="m-auto w-full">{news.map((item, index) => (
-                     <div key={item.id} className="xl:m-auto">
-                        <Image src={item.social_image} width={6000} height={400} alt="Image" className={`${index=== indexnumber? "block":"hidden"}`}/>
+    <div className="xl:max-w-screen-xl m-auto">
+        <div className="carousel rounded-box carousel-center xl:max-w-screen-xl m-auto relative]" >{news.map((item, index) => (
+                     <div key={item.id} className="carousel-item overflow-hidden">
+                        <Image src={item.social_image} width={6000} height={400} alt="Image" className={`${indexnumber=== index? "block": "hidden"} xl:w-full`}/>
                     </div>
             ))}
-            <div className="flex gap-2">
+        </div>
+        <div className="flex gap-2">
                         <IoIosArrowDropleftCircle onClick={()=> {
                            
                             if(indexnumber === 0) {
@@ -31,7 +32,7 @@ return (
                                 setIndexnumber(indexnumber-1)
                             }
                         }} className="w-20 h-20" />
-                        <IoIosArrowDroprightCircle onClick={()=> {
+                        <IoIosArrowDroprightCircle  onClick={()=> {
             
                             if(indexnumber === news.length-1) {
                                 setIndexnumber (0)
@@ -41,7 +42,6 @@ return (
                             }
                         }} className="w-20 h-20"/>
             </div>
-        </div>
     </div>
 )
 }

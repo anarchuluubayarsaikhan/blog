@@ -21,6 +21,8 @@ module.exports = {
         "username-color":"#97989F",
         "border-color":"#DCDDDF",
         "selected":"#495057",
+        "contact":"#F6F6F7",
+
       },
     },
   },

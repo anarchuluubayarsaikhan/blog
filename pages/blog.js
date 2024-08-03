@@ -34,7 +34,7 @@ export default function Blog() {
         <div className="flex flex-col xl:max-w-screen-xl m-auto py-[100px] gap-8">
             <h3 className="font-bold text-2xl text-title-color px-8 xl:px-0">All Blog Post</h3>
             <div className="text-center">
-                <div className="grid xl:grid-cols-3 xl:gap-5 grid-cols-1 w-full xl:m-auto xl:max-w-screen-xl">
+                <div className="grid xl:grid-cols-3 xl:gap-5 grid-cols-1 w-full xl:m-auto xl:max-w-screen-xl md:grid-cols-2">
                 {articles.map((article) => (
                     <div key={article.id} className="card border border-border-card-color rounded-xl p-4 gap-4">
                         <Image src={article.social_image} width={360} height={240} className="w-full rounded-md aspect-video object-cover bg-slate-600" alt="Image"/>

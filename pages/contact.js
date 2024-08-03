@@ -16,7 +16,7 @@ export default function Contact() {
             <div className="flex flex-col gap-5">
                 <p className="font-semibold text-4xl text-black">Contact Us</p>
                 <p className="text-base font-normal text-button-bg ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                <div className="flex justify-between">
+                <div className="flex gap-12">
                     <div className="border border-border-card-color p-4 gap-3 flex flex-col">
                         <p className="font-semibold text-2xl text-black">Address</p>
                         <p className="text-lg font-normal text-button-bg ">1328 Oak Ridge Drive,  Saint  Louis, Missouri</p>
@@ -40,7 +40,7 @@ export default function Contact() {
                         <input type="text" placeholder="Subject" class="input input-bordered w-full max-w-md" id="input2"/>
                         <textarea class="textarea textarea-bordered" placeholder="Write a message" id="input3"></textarea>
                     </div>
-                    <button className="btn w-[130px] btn-primary" onClick={Input}>Back To Home</button>
+                    <button className="btn w-[130px] btn-primary" onClick={Input}>Send Message</button>
                 </div>
             </div>
         </div>

@@ -23,7 +23,6 @@ if (!article){
 
     return (
         <div className="xl:m-auto xl: max-w-screen-xl p-8 ">
-            <Header/>
             <div className="flex flex-col place-items-center mt-24 gap-8">
                 <div className="flex flex-col place-items-center gap-5">
                     <div className="font-semibold text-4xl">{article.title}</div>

@@ -29,8 +29,8 @@ export function Swipersnew () {
       scrollbar={{ draggable: true }}
     >
       {news.map((item, index) => (
-      <SwiperSlide key={item.id}>
-            <Image src={item.social_image} width={6000} height={400} alt="Image" />
+      <SwiperSlide key={item.id} >
+            <Image src={item.social_image} width={6000} height={400} alt="Image"/>
       </SwiperSlide>
       ))}
     </Swiper>

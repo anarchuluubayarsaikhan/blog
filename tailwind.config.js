@@ -19,6 +19,8 @@ module.exports = {
         "button-bg": "#696A75",
         "title-color":"#181A2A",
         "username-color":"#97989F",
+        "border-color":"#DCDDDF",
+        "selected":"#495057",
       },
     },
   },

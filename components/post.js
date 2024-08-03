@@ -28,7 +28,7 @@ export function Post() {
 
     function loadMore() {
         setLoading(true)
-            fetch(`https://dev.to/api/articles?username=ben&page=${pages+1}&per_page=9&tag=${selected}`).then((response) => {
+            fetch(`https://dev.to/api/articles?username=ben&page=${pages+1}&per_page=9&tag=${selected==="all"? "" : selected}`).then((response) => {
                 return response.json()}).then((newdata) => {setArtricles(a => [...a, ...newdata])
                     setPages(p=>p+1)
                     if (newdata.length<9) {

@@ -1,18 +1,14 @@
-import Image from "next/image";
 import { useEffect, useState } from "react"
-import dayjs from "dayjs";
-import relativeTime from 'dayjs/plugin/relativeTime'
-import "@/components/dayjs-mn"
-import Link from "next/link";
-dayjs.extend(relativeTime);
+import { ArticleCard } from "./articlecard"
 
 
 export function Post() {
     const [articles, setArtricles] = useState([])
-    const [pages, setPages] = useState(1)
+    const [pages, setPages] = useState(0)
     const [ended, setEnded] = useState(false)
     const [loading, setLoading] = useState(false)
     const [selected, setSelected] = useState("all")
+    const perPage = 9
 
     const tags = [
         {value:"all", name:"All"},
@@ -22,22 +18,22 @@ export function Post() {
     ]
 
     useEffect(() => {
-        fetch(`https://dev.to/api/articles?username=ben&per_page=9&tag=${selected==="all"? "" : selected} `).then((response) => {
+        fetch(`https://dev.to/api/articles?username=ben&per_page=${perPage}&tag=${selected==="all"? "" : selected} `).then((response) => {
             return response.json()}).then((data) => {setArtricles(data)});
+        setPages(1)
     }, [selected]);
 
-    function loadMore() {
+    async function loadMore() {
         setLoading(true)
-            fetch(`https://dev.to/api/articles?username=ben&page=${pages+1}&per_page=9&tag=${selected==="all"? "" : selected}`).then((response) => {
-                return response.json()}).then((newdata) => {setArtricles(a => [...a, ...newdata])
-                    setPages(p=>p+1)
-                    if (newdata.length<9) {
-                        setEnded(true)
-                    }setLoading(false)
-                });
+        const response = await fetch(`https://dev.to/api/articles?username=ben&page=${pages}&per_page=${perPage}&tag=${selected==="all"? "" : selected}`)
+        const newdata = await response.json()
+        setArtricles([...articles, ...newdata])
+            setPages(pages+1)
+            if (newdata.length<perPage) {
+                setEnded(true)
+            }setLoading(false)
+        };
                 
-            
-    }
 
     return (
         <div className="flex flex-col xl:max-w-screen-xl m-auto py-[100px] gap-8 ">
@@ -49,15 +45,8 @@ export function Post() {
             </div>
             <div className="text-center">
                 <div className="grid xl:grid-cols-3 xl:gap-5 grid-cols-1  w-full xl:m-auto xl:max-w-screen-xl md:grid-cols-2">
-                {articles.map((article) => (
-                    <div key={article.id} className="card border border-border-card-color rounded-xl p-4 gap-4">
-                        <Image src={article.social_image} width={360} height={240} className="w-full rounded-md aspect-video object-cover bg-slate-600" alt="Image"/>
-                        <Link href={article.path}  className="card-body">
-                            <div className="badge text-badge-text  bg-slate-50 py-2 px-3 rounded-md">{article.tags}</div>
-                            <div className="text-desc-color text-2xl font-semibold">{article.description}</div>
-                            <div>{dayjs(article.published_at).locale('mn').fromNow()}</div>
-                        </Link>
-                    </div>
+                {articles.map((item) => (
+                    <ArticleCard key={item.id} article={item}/>
                     ))}
                 </div>
                 {!ended && (

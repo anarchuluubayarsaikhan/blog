@@ -47,7 +47,7 @@ export function Swipersnew () {
             </div>
       </SwiperSlide>
       ))}
-      <SwiperButtonPrev><IoIosArrowDropleft size={32} /></SwiperButtonPrev>
+      <SwiperButtonPrev><IoIosArrowDropleft size={32}/></SwiperButtonPrev>
       <SwiperButtonNext><IoIosArrowDropright size={32}/></SwiperButtonNext>
     </Swiper>
   );

@@ -2,20 +2,23 @@ import Link from "next/link";
 import { Header } from "./header";
 import { useState } from "react";
 export function Nav() {
+
     const navigations = [
-        {name:"Home",
+        {value:"home",
+         name:"Home",
          link:"main"}, 
-         {name:"Blog",
+         {value:"blog",
+         name:"Blog",
          link:"blog"}, 
-         {name:"Contact",
-         link:"contact"
-         }]
-    const[selected, setSelected] = useState("Home")
+         {value:"contact",
+         name:"Contact",
+         link:"contact"}]
+    const[selected, setSelected] = useState("home")
     return (
     
         <div className={`md:gap-10 hidden  ${Header?"md:flex": "md:flex-col"} }`}>
           {navigations.map((navigation, index) => (
-            <Link href={navigation.link} key={index} onClick={()=> {setSelected(navigation.name)}} className={`${selected== navigation.name? "font-bold": ""}`}>{navigation.name}</Link>
+            <Link href={navigation.link} key={index} onClick={()=> {setSelected(navigation.value)}} className={`${selected=== navigation.value? "font-bold": ""} ${Header? "flex": "flex-col"}`}>{navigation.name}</Link>
           )
           )}
         </div>

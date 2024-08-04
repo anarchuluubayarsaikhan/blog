@@ -22,14 +22,13 @@ if (!article){
 
 
     return (
-        <div className="xl:m-auto xl: max-w-screen-xl p-8 ">
+        <div className="xl:m-auto xl: max-w-screen-xl ">
             <div className="flex flex-col place-items-center mt-24 gap-8">
                 <div className="flex flex-col place-items-center gap-5">
                     <div className="font-semibold text-4xl">{article.title}</div>
                     <div className="flex gap-6">
                        <div className="flex gap-2">
-                            <Image src={article.user.profile_image_90} width={28} height={28} className="rounded-3xl"/>
-                            <div className="text-username-color font-medium text-sm">{article.user.name}</div>
+                            <div className="text-username-color font-medium text-sm">{article.user}</div>
                        </div>
                         <div className="text-username-color font-medium text-sm">{dayjs(article.published_at).format(`MMM DD, YYYY`)}</div>
                     </div>

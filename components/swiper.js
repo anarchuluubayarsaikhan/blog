@@ -1,9 +1,11 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { A11y } from 'swiper/modules';
 import 'swiper/css/navigation';
 import { EffectFade } from 'swiper/modules';
 import dayjs from "dayjs";
 import "@/components/dayjs-mn"
+import { IoIosArrowDropleft } from "react-icons/io";
+import { IoIosArrowDropright } from "react-icons/io";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -17,16 +19,21 @@ export function Swipersnew () {
     .then((response) => {return response.json()})
     .then((data) => {setNews(data)});},
     [])
-
+    const SwiperButtonNext = ({ children }) => {
+      const swiper = useSwiper();
+      return <button onClick={() => swiper.slideNext()}>{children}</button>;
+    };
+    const SwiperButtonPrev = ({ children }) => {
+      const swiper = useSwiper();
+      return <button onClick={() => swiper.slidePrev()}>{children}</button>;
+    };
   return (
     <Swiper
-      modules={[Navigation, A11y, EffectFade]}
+      modules={[A11y, EffectFade]}
       spaceBetween={50}
       effect="fade"
       slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
+      
     >
       {news.map((item, index) => (
       <SwiperSlide key={item.id} >
@@ -40,6 +47,8 @@ export function Swipersnew () {
             </div>
       </SwiperSlide>
       ))}
+      <SwiperButtonPrev><IoIosArrowDropleft size={32} /></SwiperButtonPrev>
+      <SwiperButtonNext><IoIosArrowDropright size={32}/></SwiperButtonNext>
     </Swiper>
   );
 };

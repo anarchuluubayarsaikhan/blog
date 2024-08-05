@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Notfound() {
     return (
         <div className="flex justify-between xl:max-w-screen-xl m-auto py-[100px]">
@@ -5,7 +7,9 @@ export default function Notfound() {
             <div className="border-l-2 pl-14 flex flex-col gap-5 pr-72">
                 <p className="font-semibold text-2xl text-black">Page Not Found</p>
                 <p className="text-lg font-normal text-button-bg">We're sorry, This page is unknown or does not exist the page you are looking for.</p>
-                <button className="btn w-[130px] btn-primary">Back To Home</button>
+                <Link href="/">
+                    <button className="btn w-[130px] btn-primary">Back To Home</button>
+                </Link>
             </div>
         </div>
      

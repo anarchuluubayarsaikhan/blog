@@ -45,7 +45,7 @@ export function Post() {
                 )}
             </div>
             <div className="text-center">
-                <div className="grid xl:grid-cols-3 xl:gap-5 grid-cols-1  w-full xl:m-auto xl:max-w-screen-xl md:grid-cols-2">
+                <div className="grid xl:grid-cols-3 gap-5 grid-cols-1  w-full xl:m-auto xl:max-w-screen-xl md:grid-cols-2">
                     {articles.map((item) => (
                         <ArticleCard key={item.id} article={item} />
                     ))}

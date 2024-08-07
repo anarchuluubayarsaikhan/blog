@@ -28,7 +28,7 @@ export function Nav({ className }) {
   ]
 
     return (
-    <div className={`md:gap-10 hidden md:flex ${className}`}>
+    <div className={`gap-10 hidden md:flex ${className}`}>
       {navigations.map((navigation, index) => (
         <Link href={navigation.link} key={index} onClick={()=> setSelected(navigation.value)}  >{navigation.name}</Link>
       )

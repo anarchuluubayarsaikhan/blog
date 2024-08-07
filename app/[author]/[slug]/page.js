@@ -1,6 +1,7 @@
 import parse from 'html-react-parser'
 import dayjs from "dayjs";
 
+
 export async function generateMetadata ({params}){
     const response = await fetch(`https://dev.to/api/articles/${params.author}/${params.slug}`)
     const article = await response.json()

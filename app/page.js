@@ -7,13 +7,14 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home(params) {
   return (
     <main className=" p-8">
-      <Swipersnew/>
-      <Trending/>
-      <Post/>
-      <div class="gcse-searchresults"></div>
+      <div>
+        <Swipersnew/>
+        <Trending/>
+        <Post/>
+      </div>
     </main>
   );
 }

@@ -34,7 +34,7 @@ export function Footer() {
             <div className="xl:max-w-screen-xl m-auto gap-6 flex flex-col">
                 <div className="flex justify-between">
                     <p className="text-desc-color font-semibold text-lg">About</p>
-                    <Nav className="flex-col" />
+                    <Nav className="flex-col gap-4" />
                     <div className="flex gap-7">
                         {icons.map((part) => (
                             <Link href={part.link} className="w-4 h-4">{part.icon}</Link>

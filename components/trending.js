@@ -16,10 +16,10 @@ export function Trending() {
                 {trendings.map((trending) => (
                     <Link href={trending.path}>
                         <div style={{ backgroundImage: `url(${trending.social_image})` }} className="max-w-[293px] max-h-[320px] rounded-xl pt-44 pb-7 pl-7 pr-8">
-                        <div className="w-[230px] h-[120px] flex flex-col gap-4">
-                            <div class="badge badge-primary">{trending.tags}</div>
-                            <p className="text-white text-lg font-semibold">{trending.title}</p>
-                        </div>
+                            <div className="w-[230px] h-[120px] flex flex-col gap-4">
+                                <div class="badge badge-primary">{trending.tags}</div>
+                                <p className="text-white text-lg font-semibold">{trending.title}</p>
+                            </div>
                     </div>
                     </Link> 
                 ))}

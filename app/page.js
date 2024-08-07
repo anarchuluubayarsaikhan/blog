@@ -1,3 +1,5 @@
+"use client"
+
 import { Post } from "@/components/post";
 import { Swipersnew } from "@/components/swiper";
 import { Trending } from "@/components/trending";
@@ -11,6 +13,7 @@ export default function Home() {
       <Swipersnew/>
       <Trending/>
       <Post/>
+      <div class="gcse-searchresults"></div>
     </main>
   );
 }

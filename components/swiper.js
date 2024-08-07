@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { A11y } from 'swiper/modules';
-import 'swiper/css/navigation';
 import { EffectFade } from 'swiper/modules';
 import dayjs from "dayjs";
 import "@/components/dayjs-mn"

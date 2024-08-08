@@ -6,7 +6,7 @@ const navigations = ["Home", "Blog", "Contact"]
 export function Header() {
   return (
 
-    <div className="flex justify-between items-center xl:max-w-screen-xl xl:m-auto p-5 xl:px-0 xl:py-8">
+    <div className="flex justify-between items-center xl:max-w-screen-xl xl:m-auto p-5 xl:px-0 xl:py-8 font-sans">
       <Logo />
       <Nav />
       <form action="/search">

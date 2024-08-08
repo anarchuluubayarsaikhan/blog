@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Error() {
     return (
-        <div className="flex justify-between xl:max-w-screen-xl m-auto py-[100px]">
+        <div className="flex justify-between xl:max-w-screen-xl m-auto py-[100px] font-sans">
             <div className="pr-14 pl-72 py-20 text-7xl font-normal text-black">404</div>
             <div className="border-l-2 pl-14 flex flex-col gap-5 pr-72">
                 <p className="font-semibold text-2xl text-black">Page Not Found</p>

@@ -38,9 +38,13 @@ export function Swipersnew() {
       {news.map((item, index) => (
         <SwiperSlide key={item.id} >
           <Image src={item.social_image} width={6000} height={400} alt="Image" />
-          <div className='w-1/2 h-2/5 aspect-video bg-white border-border-card-color border p-10 rounded-xl absolute left-[11px] bottom-[13px] flex flex-col gap-4 overflow-hidden'>
+          <div className='w-1/2 h-2/5 aspect-video bg-white border-border-card-color border p-10 rounded-xl absolute left-[11px] bottom-[13px] flex flex-col gap-4 overflow-hidden font-sans'>
             <div className='flex flex-col gap-2'>
-              <div className="badge badge-primary">{item.tags}</div>
+              <div className='flex gap-2 flex-wrap'>
+                {item.tag_list.map((tag)=> 
+                  <div className="badge badge-primary p-3">{tag}</div>
+                )}
+              </div>
               <p className='text-title-color font-semibold text-4xl'>{item.title}</p>
             </div>
             <div >{dayjs(item.published_at).locale(`mn`).fromNow()}</div>

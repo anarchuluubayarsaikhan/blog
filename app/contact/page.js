@@ -13,7 +13,7 @@ export default function Contact() {
         input3.value = ""
     }
     return (
-        <div className="xl: max-w-screen-xl m-auto flex flex-col gap-12 pt-28 pb-40 px-[291px]">
+        <div className="xl: max-w-screen-xl m-auto flex flex-col gap-12 pt-28 pb-40 px-[291px] font-sans">
             <div className="flex flex-col gap-5">
                 <p className="font-semibold text-4xl text-black">Contact Us</p>
                 <p className="text-base font-normal text-button-bg ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>

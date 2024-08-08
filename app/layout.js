@@ -8,6 +8,7 @@ import "@/styles/swiper-bundle.min.css";
 export default function RootLayout({ children, params  }) {
   return (
     <html lang="en">
+      
       <body>
         <div className="p-8">
           <Header/>

@@ -29,13 +29,11 @@ export function Blog() {
                 setEnded(true)
             } setLoading(false)
         });
-
-
     }
 
     return (
-        <div className="text-center">
-            <div className="grid xl:grid-cols-3 xl:gap-5 grid-cols-1  w-full xl:m-auto xl:max-w-screen-xl md:grid-cols-2">
+        <div className="text-center font-sans">
+            <div className={`grid xl:grid-cols-3 xl:gap-5 grid-cols-1  w-full xl:m-auto xl:max-w-screen-xl md:grid-cols-2 ${setLoading && "hidden"} `}>
                 {articles.map((article) => (
                     <div key={article.id} className="card border border-border-card-color rounded-xl p-4 gap-4">
                         <Image src={article.social_image} width={360} height={240} className="w-full rounded-md aspect-video object-cover bg-slate-600" alt="Image" />

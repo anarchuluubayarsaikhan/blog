@@ -30,7 +30,7 @@ export function Footer() {
     const subfooters = ["Terms of Use", "|", "Privacy Policy", "|", "Cookie Policy"]
 
     return (
-        <div className=" bg-border-card-color pt-16 w-full px-8 xl:px-0">
+        <div className=" bg-border-card-color pt-16 w-full px-8 xl:px-0 font-sans">
             <div className="xl:max-w-screen-xl m-auto gap-6 flex flex-col">
                 <div className="flex justify-between">
                     <p className="text-desc-color font-semibold text-lg">About</p>

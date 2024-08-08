@@ -21,7 +21,7 @@ export default async function Page({params}){
     const article = await response.json()
 
     return (
-        <div className="xl:m-auto xl:max-w-screen-xl min-h-screen">
+        <div className="xl:m-auto xl:max-w-screen-xl min-h-screen font-sans">
             <div className="flex flex-col place-items-center mt-24 gap-8">
                 <div className="flex flex-col place-items-center gap-5">
                     <div className="font-semibold text-4xl">{article.title}</div>

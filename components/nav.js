@@ -1,13 +1,10 @@
 import Link from "next/link";
-import { useRouter } from 'next/router'
 import { useState } from "react";
 
 
 export function Nav({ className }) {
 
-  const [selected, setSelected] =useState()
-
-
+  const [selected, setSelected] = useState()
 
 
   const navigations = [
@@ -16,21 +13,23 @@ export function Nav({ className }) {
       name: "Home",
       link: "/"
     },
-    { value: "blog",
+    {
+      value: "blog",
       name: "Blog",
       link: "/blog"
     },
-    { value: "contact",
+    {
+      value: "contact",
       name: "Contact",
       link: "/contact"
     },
-    {link: "/trending"}
+    { link: "/trending" }
   ]
 
-    return (
-    <div className={`gap-10 hidden md:flex ${className}`}>
+  return (
+    <div className={`gap-10 hidden md:flex ${className} font-sans`}>
       {navigations.map((navigation, index) => (
-        <Link href={navigation.link} key={index} onClick={()=> setSelected(navigation.value)}  >{navigation.name}</Link>
+        <Link href={navigation.link} key={index} onClick={() => setSelected(navigation.value)} className={`${selected === navigation.value ? "font-bold" : ""}`}  >{navigation.name}</Link>
       )
       )}
     </div>

@@ -10,7 +10,7 @@ export function Trending() {
     },
         [])
     return (
-        <div className="flex flex-col gap-7 pt-[100px] font-sans xl:max-w-screen-xl m-auto">
+        <div className="xl:flex xl:flex-col xl:gap-7 pt-[100px] font-sans xl:max-w-screen-xl m-auto hidden ">
              <p className="text-title-color font-bold text-2xl">Trending</p>
             <div className="flex flex-col gap-7  xl:max-w-screen-xl  m-auto overflow-scroll">
                 <div className="flex gap-5 ">

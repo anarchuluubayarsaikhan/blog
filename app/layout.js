@@ -10,7 +10,7 @@ export default function RootLayout({ children, params  }) {
     <html lang="en">
       
       <body>
-        <div className="p-8">
+        <div>
           <Header/>
           {children}
         </div>

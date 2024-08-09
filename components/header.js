@@ -12,7 +12,7 @@ export function Header() {
       <Nav />
       <form action="/search"> 
           <label className="input input-bordered md:flex items-center gap-2 hidden" >
-            <input type="text" className="grow" placeholder="Search" name="q " />
+            <input type="text" className="grow" placeholder="Search" name="q" />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
@@ -24,8 +24,8 @@ export function Header() {
                 clipRule="evenodd" />
             </svg>
           </label>
-          <IoMdMenu className="md:hidden" size={32}/>
       </form>
+      <IoMdMenu className="md:hidden" size={32}/>
      
 
     </div>

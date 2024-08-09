@@ -36,7 +36,7 @@ export default function Blog() {
     }
 
     return (
-        <div className="flex flex-col xl:max-w-screen-xl m-auto py-[100px] gap-8 font-sans">
+        <div className={`flex flex-col xl:max-w-screen-xl m-auto py-[100px] gap-8 font-sans ${loading && "hidden"}`}>
             <h3 className="font-bold text-2xl text-title-color">All Blog Post</h3>
         <div className="text-center">
             <div className="grid xl:grid-cols-3 gap-5 grid-cols-1  w-full xl:m-auto xl:max-w-screen-xl md:grid-cols-2">

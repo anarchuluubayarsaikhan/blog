@@ -39,7 +39,7 @@ export function Post() {
 
     return (
         <div className="flex flex-col xl:max-w-screen-xl m-auto py-[100px] gap-8 font-sans">
-            <h3 className={`font-bold text-2xl text-title-color ${setLoading? "hidden":""}`}>All Blog Post</h3>
+            <h3 className={`font-bold text-2xl text-title-color`}>All Blog Post</h3>
             <div className="flex gap-3">
                 {tags.map((tag) =>
                     <div key={tag.value} className={`font-bold text-xs cursor-pointer ${selected === tag.value ? "text-orange-500" : "text-selected"}`} onClick={() => setSelected(tag.value)}>{tag.name}</div>

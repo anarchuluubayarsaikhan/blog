@@ -14,6 +14,8 @@ export default function Blog() {
     const [pages, setPages] = useState(1)
     const [ended, setEnded] = useState(false)
     const [loading, setLoading] = useState(false)
+    const perPage = 9
+
     useEffect(() => {
         fetch(`https://dev.to/api/articles?username=ben&per_page=9`).then((response) => {
             return response.json()
@@ -22,21 +24,21 @@ export default function Blog() {
 
     function loadMore() {
         setLoading(true)
-        fetch(`https://dev.to/api/articles?username=ben&page=${pages + 1}&per_page=9`).then((response) => {
+        fetch(`https://dev.to/api/articles?username=ben&page=${pages + 1}&per_page=${perPage}`)
+        .then((response) => {
             return response.json()
         }).then((newdata) => {
             setArtricles(a => [...a, ...newdata])
             setPages(pages + 1)
-            if (newdata.length < 6) {
+            if (newdata.length < perPage) {
                 setEnded(true)
             } setLoading(false)
         });
 
-
     }
 
     return (
-        <div className={`flex flex-col xl:max-w-screen-xl m-auto py-[100px] gap-8 font-sans ${loading && "hidden"} px-8`}>
+        <div className="flex flex-col xl:max-w-screen-xl m-auto py-[100px] gap-8 font-sans px-8">
             <h3 className="font-bold text-2xl text-title-color">All Blog Post</h3>
         <div className="text-center">
             <div className="grid xl:grid-cols-3 gap-5 grid-cols-1  w-full xl:m-auto xl:max-w-screen-xl md:grid-cols-2">

@@ -1,6 +1,7 @@
 
 import { Nav } from "./nav";
 import { Logo } from "./logo";
+import { IoMdMenu } from "react-icons/io";
 const navigations = ["Home", "Blog", "Contact"]
 
 export function Header() {

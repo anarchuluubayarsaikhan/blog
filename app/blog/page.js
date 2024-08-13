@@ -28,7 +28,7 @@ export default function Blog() {
         .then((response) => {
             return response.json()
         }).then((newdata) => {
-            setArtricles(a => [...a, ...newdata])
+            setArtricles([...articles, ...newdata])
             setPages(pages + 1)
             if (newdata.length < perPage) {
                 setEnded(true)

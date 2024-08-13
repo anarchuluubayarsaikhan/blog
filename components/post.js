@@ -4,7 +4,7 @@ import { ArticleCard } from "./articlecard"
 
 export function Post() {
     const [articles, setArtricles] = useState([])
-    const [pages, setPages] = useState(0)
+    const [pages, setPages] = useState(1)
     const [ended, setEnded] = useState(false)
     const [loading, setLoading] = useState(false)
     const [selected, setSelected] = useState("all")
@@ -26,7 +26,7 @@ export function Post() {
 
     async function loadMore() {
         setLoading(true)
-        const response = await fetch(`https://dev.to/api/articles?username=ben&page=${pages}&per_page=${perPage}&tag=${selected === "all" ? "" : selected}`)
+        const response = await fetch(`https://dev.to/api/articles?username=ben&page=${pages+1}&per_page=${perPage}&tag=${selected === "all" ? "" : selected}`)
         const newdata = await response.json()
         setArtricles([...articles, ...newdata])
         setPages(pages + 1)
